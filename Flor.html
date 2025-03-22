@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Flor</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: skyblue;
+            margin: 0;
+
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  background-image: linear-gradient(
+      90deg,
+      transparent 50px,
+      #ffb4b8 50px,
+      #ffb4b8 52px,
+      transparent 52px
+    ),
+    linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
+  background-size: 100% 30px;
+        }
+
+    
+        h1 {
+            margin: 20px 0;
+            color: #ff3300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        canvas {
+            /*border: 1px solid black;*/
+        }
+        .button {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #272727;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  opacity: 0.7;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  border-radius: 9px;
+  transition: 0.5s;
+  opacity: 0;
+  filter: blur(20px);
+}
+
+.button:hover:after {
+  opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Te amo</h1>
+    <button class="button"><span>Grecia</span></button>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="flor.js"></script>
+</body>
+</html>
